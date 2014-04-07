@@ -1,0 +1,58 @@
+################################################################################
+#             Viewing the Commit History
+#
+# Quelle: log.txt                                 
+#									
+# Online Resource:
+#   http://git-scm.com/book/en/Git-Basics-Viewing-the-Commit-History
+#
+#
+# Related documents:
+#
+#
+#									
+################################################################################
+
+$ git log -p -2
+	 -p, shows the diff introduced in each commit
+	 -2, limits the output to only the last two entries:
+ 
+$ git log -U1 --word-diff
+	to get word diff instead of normal line by line diff. 
+	Word diff format is quite useless when applied to source code, 
+	but it comes in handy when applied to large text files
+  
+$ git log --stat
+	some abbreviated stats for each commit,
+	
+$ git log --pretty=oneline
+	ca82a6dff817ec66f44342007202690a93763949 changed the version number
+	085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7 removed unnecessary test code
+	a11bef06a3f659402fe7563abf99ad00de2209e6 first commit
+
+$ git log --pretty=format:"%h - %an, %ar : %s"
+$ git log origin/master --pretty=format:"%cd %h %s"
+
+	ca82a6d - Scott Chacon, 11 months ago : changed the version number
+	085bb3b - Scott Chacon, 11 months ago : removed unnecessary test code
+	a11bef0 - Scott Chacon, 11 months ago : first commit
+
+		Option 	Description of Output
+		%H 		Commit hash
+		%h 		Abbreviated commit hash
+		%T 		Tree hash
+		%t 		Abbreviated tree hash
+		%P 		Parent hashes
+		%p 		Abbreviated parent hashes
+		%an 	Author name
+		%ae 	Author e-mail
+		%ad 	Author date (format respects the --date= option)
+		%ar 	Author date, relative
+		%cn 	Committer name
+		%ce 	Committer email
+		%cd 	Committer date
+		%cr 	Committer date, relative
+		%s 		Subject	
+
+git log --pretty=format:"%h %s" --graph
+ adds a nice little ASCII graph showing your branch and merge history,		

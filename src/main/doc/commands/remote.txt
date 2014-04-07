@@ -1,0 +1,36 @@
+################################################################################
+ Remote-Repositorys in Git
+################################################################################
+
+http://git-scm.com/book/en/Git-Basics-Working-with-Remotes
+https://www.atlassian.com/de/git/tutorial/remote-repositories#!remote
+
+Mit dem Befehl git remote können Sie Verbindungen mit anderen Repositorys erstellen, 
+anzeigen und löschen.
+
+Verwendung
+================================================================================
+
+git remote
+# Listet die Remote-Verbindungen auf, die zu anderen Repositorys bestehen.
+
+git remote -v
+# Entspricht dem vorangegangenen Befehl, enthält aber zudem noch die URL von jeder Verbindung.
+
+git remote add <name> <url>
+# Erstellt eine neue Verbindung zu einem Remote-Repository. Nachdem Sie das Repository hinzugefügt haben, 
+# können Sie <name> als komfortable Abkürzung für die <url> in anderen Git-Befehlen verwenden.
+
+git remote rm <name>
+# Entfernt die Verbindung zum Remote-Repository mit dem Namen <name>.
+
+git remote rename <old-name> <new-name>
+# Benennt eine Remote-Verbindung von <old-name> in <new-name> um
+
+git remote add john http://dev.example.com/john.git
+
+Inspecting a Remote
+How to check for changes on remote (origin) git repository?
+================================================================================
+ 
+git remote show origin

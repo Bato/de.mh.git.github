@@ -1,0 +1,50 @@
+################################################################################
+#             Git Branching
+#
+# Quelle: branch.txt                                 
+#									
+# Online Resource:
+#   http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging
+#
+#
+# Related documents:
+#
+#  History:
+#   21.11.2013	Datei erstellt
+# 
+#
+#									
+################################################################################
+
+$ git branch testing
+	create a new branch called testing. You do this with the git branch command:
+	
+$ git checkout master
+	to switch branches
+	
+$ git checkout -b iss53
+	To create a branch and switch to it at the same time
+	
+
+$ git checkout -b hotfix
+	Switched to a new branch "hotfix"
+$ vim index.html
+$ git commit -a -m 'fixed the broken email address'
+		[hotfix]: created 3a0874c: "fixed the broken email address"
+		 1 files changed, 0 insertions(+), 1 deletions(-)	
+
+	 Next, you have a hotfix to make. Let’s create a hotfix branch on which 
+	 to work until it’s completed	
+
+$ git checkout master
+$ git merge hotfix
+		Updating f42c576..3a0874c
+		Fast forward
+		 README |    1 -
+		 1 files changed, 0 insertions(+), 1 deletions(-)
+
+You can run your tests, make sure the hotfix is what you want, 
+and merge it back into your master branch to deploy to production. 
+
+$ git branch -d hotfix
+	Deleted branch hotfix (3a0874c).
